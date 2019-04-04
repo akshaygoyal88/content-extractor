@@ -3,7 +3,6 @@ class Api::V1::UrlsController < ApplicationController
   require 'open-uri'
 
   def create
-    Url.destroy_all
     link = params['url'] || "http://akshaygoyal.herokuapp.com"
 
     doc = Nokogiri::HTML(open(link))
